@@ -8,9 +8,12 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   devServer: {
     static: './dist',
+    compress: true,
+    port: 9000,
   },
   module: {
     rules: [
@@ -42,4 +45,7 @@ module.exports = {
       template: './public/index.html',
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
