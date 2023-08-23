@@ -17,12 +17,13 @@ export const TodoList: FC = () => {
     )
   );
 
-  if (isLoading) return <div>Loading</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   if (error) return <div>An error has occurred</div>;
 
   return (
     <div>
+      <div>Todo list</div>
       <ul>
         {data.map((todoItem: TodoItem) => (
           <li key={todoItem.id}>{todoItem.title}</li>
